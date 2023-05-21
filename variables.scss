@@ -1,0 +1,33 @@
+
+$main: #000000;
+$primary-color: #ffffff;
+$secondary-color: #C0C0C0;
+
+@mixin font($font-size: 14px, $line-height: 20px, $font-weight: 400){
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+@mixin flex($direction: row, $alignItems: flex-start, $justify-content: flex-start, $gap: 16px){
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignItems;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
