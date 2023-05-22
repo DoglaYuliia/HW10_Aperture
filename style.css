@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -15,6 +16,10 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+}
+
+button {
+  cursor: pointer;
 }
 
 p {
@@ -143,6 +148,10 @@ header .desktop-nav {
     gap: 32px;
   }
 }
+header nav a:hover {
+  color: rgba(183, 175, 175, 0.65); /* Цвет ссылок при наведении */
+  border-bottom-width: 3px; /* Толщина линии снизу */
+}
 header .btn {
   padding: 9px 20px 13px;
   width: 155px;
@@ -181,6 +190,14 @@ header .flex {
   background-image: url("./img/sec-1-img.png");
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
   min-height: 716px;
 }
 .sec-1 .container {
@@ -326,6 +343,11 @@ header .flex {
   justify-content: center;
   gap: 109px;
 }
+.sec-6 .container .flex-clients :hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
 
 /*----------sec-8---------------*/
 .sec-8 {
@@ -449,103 +471,6 @@ footer .flex2 .right-side2 svg {
   position: absolute;
   top: 11px;
   right: 6px;
-}
-footer .flex2 .roller-wrapper {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  /*  display: flex;
-
-   */
-  justify-content: center;
-  align-items: center;
-}
-footer .flex2 .roller-wrapper .roller {
-  color: #282525;
-  position: relative;
-  display: none;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-}
-footer .flex2 .roller-wrapper .roller div {
-  transform-origin: 40px 40px;
-  animation: roller 1.2s linear infinite;
-}
-footer .flex2 .roller-wrapper .roller div:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 3px;
-  left: 37px;
-  width: 6px;
-  height: 18px;
-  border-radius: 20%;
-  background: rgba(168, 198, 238, 0.68);
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(1) {
-  transform: rotate(0deg);
-  animation-delay: -1.1s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(2) {
-  transform: rotate(30deg);
-  animation-delay: -1s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(3) {
-  transform: rotate(60deg);
-  animation-delay: -0.9s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(4) {
-  transform: rotate(90deg);
-  animation-delay: -0.8s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(5) {
-  transform: rotate(120deg);
-  animation-delay: -0.7s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(6) {
-  transform: rotate(150deg);
-  animation-delay: -0.6s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(7) {
-  transform: rotate(180deg);
-  animation-delay: -0.5s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(8) {
-  transform: rotate(210deg);
-  animation-delay: -0.4s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(9) {
-  transform: rotate(240deg);
-  animation-delay: -0.3s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(10) {
-  transform: rotate(270deg);
-  animation-delay: -0.2s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(11) {
-  transform: rotate(300deg);
-  animation-delay: -0.1s;
-}
-footer .flex2 .roller-wrapper .roller div:nth-child(12) {
-  transform: rotate(330deg);
-  animation-delay: 0s;
-}
-footer .flex2 .loading .wrapper {
-  filter: blur(10px);
-}
-footer .flex2 .loading .roller {
-  display: block;
-}
-@keyframes roller {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -813,6 +738,124 @@ footer .flex2 .loading .roller {
 @media (min-width: 1280px) {
   .mobile {
     display: none;
+  }
+}
+.roller-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  /*  display: flex;
+
+   */
+  justify-content: center;
+  align-items: center;
+}
+.roller-wrapper .roller {
+  color: #282525;
+  position: relative;
+  display: none;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.roller-wrapper .roller div {
+  transform-origin: 40px 40px;
+  animation: roller 1.2s linear infinite;
+}
+.roller-wrapper .roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: rgba(168, 198, 238, 0.68);
+}
+.roller-wrapper .roller div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.roller-wrapper .roller div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.roller-wrapper .roller div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.roller-wrapper .roller div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.roller-wrapper .roller div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.roller-wrapper .roller div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.roller-wrapper .roller div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.roller-wrapper .roller div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.roller-wrapper .roller div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.roller-wrapper .roller div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.roller-wrapper .roller div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.roller-wrapper .roller div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+
+.loading .wrapper {
+  filter: blur(10px);
+}
+.loading .roller {
+  display: block;
+}
+
+@keyframes roller {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
   }
 }
 
