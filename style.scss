@@ -127,8 +127,8 @@ header {
 
   nav{
     a:hover{
-        color: rgba(183, 175, 175, 0.65); /* Цвет ссылок при наведении */
-        border-bottom-width: 3px; /* Толщина линии снизу */
+        color: rgba(183, 175, 175, 0.65);
+        border-bottom-width: 3px;
       }
   }
 
@@ -171,21 +171,18 @@ header {
   background-image: url("./img/sec-1-img.png");
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-animation: slidein 100s;
-  animation: slidein 100s;
-
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
   min-height: 716px;
+    -webkit-animation: slidein 100s;
+    animation: slidein 100s;
 
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 
   .container {
     position: relative;
@@ -321,15 +318,9 @@ header {
 
     .flex-clients {
       @include variables.flex(row, center, center, 109px);
-      :hover {
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-      }
+    }
     }
   }
-}
-
 
 /*----------sec-8---------------*/
 
@@ -382,6 +373,7 @@ footer {
 
       ul {
         @include variables.flex(row, flex-start, end, 20px);
+
 
         li {
           margin: 56px 0 104px;
